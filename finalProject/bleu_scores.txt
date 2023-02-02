@@ -1,0 +1,31 @@
+(tii) C:\Users\Kliment\Downloads\finalProject>python run.py translate en_bg_data/test.bg ./test_translate
+[nltk_data] Downloading package punkt to
+[nltk_data]     C:\Users\Kliment\AppData\Roaming\nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+Loading file: en_bg_data/test.bg
+Loading file: en_bg_data/test.bg
+[-------------------------------------------------]]
+
+(tii) C:\Users\Kliment\Downloads\finalProject>python run.py bleu en_bg_data/test.en ./test_translate      
+[nltk_data] Downloading package punkt to
+[nltk_data]     C:\Users\Kliment\AppData\Roaming\nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+Loading file: en_bg_data/test.en
+Loading file: ./test_translate
+Corpus BLEU:  41.18162797807971
+
+(tii) C:\Users\Kliment\Downloads\finalProject>python run.py translate en_bg_data/dev.bg ./dev_translate   
+[nltk_data] Downloading package punkt to
+[nltk_data]     C:\Users\Kliment\AppData\Roaming\nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+Loading file: en_bg_data/dev.bg
+Loading file: en_bg_data/dev.bg
+[-------------------------------------------------]]
+
+(tii) C:\Users\Kliment\Downloads\finalProject>python run.py bleu en_bg_data/dev.en ./dev_translate           
+[nltk_data] Downloading package punkt to
+[nltk_data]     C:\Users\Kliment\AppData\Roaming\nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+Loading file: en_bg_data/dev.en
+Loading file: ./dev_translate
+Corpus BLEU:  43.341652822739626

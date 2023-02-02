@@ -1,0 +1,15 @@
+(tii) C:\Users\Kliment\Downloads\finalProject>python run.py perplexity en_bg_data/dev.bg en_bg_data/dev.en
+[nltk_data] Downloading package punkt to
+[nltk_data]     C:\Users\Kliment\AppData\Roaming\nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+Loading file: en_bg_data/dev.bg
+Loading file: en_bg_data/dev.en
+Model perplexity:  3.6945324466517833
+
+(tii) C:\Users\Kliment\Downloads\finalProject>python run.py perplexity en_bg_data/test.bg en_bg_data/test.en 
+[nltk_data] Downloading package punkt to
+[nltk_data]     C:\Users\Kliment\AppData\Roaming\nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+Loading file: en_bg_data/test.bg
+Loading file: en_bg_data/test.en
+Model perplexity:  3.9820033030359547
