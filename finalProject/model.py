@@ -53,7 +53,7 @@ class MultiHeadAttentionLayer(torch.nn.Module):
         #no attention dropout       
         x = torch.matmul(attention, V)  # [batch size, n heads, query len, head dim]
         
-        x = x.permute(0, 2, 1, 3).flatten(2,3)  # [batch size, query len, n heads, head dim] -> [batch size, query len * n heads, head dim]
+        x = x.permute(0, 2, 1, 3).flatten(2,3)  # [batch size, query len, n heads, head dim] -> [batch size, query len, head dim * n heads]
 
                 
         x = self.fc_out(x)  # [batch size, query len, hid dim]
