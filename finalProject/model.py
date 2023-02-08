@@ -11,7 +11,7 @@
 import torch
 
 class MultiHeadAttentionLayer(torch.nn.Module):
-    def __init__(self, hidden_size, heads, dropout, device):
+    def __init__(self, hidden_size, heads, device):
         super().__init__()
                 
         self.hidden_size = hidden_size
@@ -97,7 +97,7 @@ class EncoderLayer(torch.nn.Module):
         
         self.self_attn_layer_norm = torch.nn.LayerNorm(hidden_size)
         self.ff_layer_norm = torch.nn.LayerNorm(hidden_size)
-        self.self_attention = MultiHeadAttentionLayer(hidden_size, heads, dropout, device)
+        self.self_attention = MultiHeadAttentionLayer(hidden_size, heads, device)
         self.positionwise_feedforward = torch.nn.Sequential(
             torch.nn.Linear(hidden_size, pf_size),
             torch.nn.ReLU(),
@@ -163,8 +163,8 @@ class DecoderLayer(torch.nn.Module):
         self.self_attn_layer_norm = torch.nn.LayerNorm(hidden_size)
         self.enc_attn_layer_norm = torch.nn.LayerNorm(hidden_size)
         self.ff_layer_norm = torch.nn.LayerNorm(hidden_size)
-        self.self_attention = MultiHeadAttentionLayer(hidden_size, heads, dropout, device)
-        self.encoder_attention = MultiHeadAttentionLayer(hidden_size, heads, dropout, device)
+        self.self_attention = MultiHeadAttentionLayer(hidden_size, heads, device)
+        self.encoder_attention = MultiHeadAttentionLayer(hidden_size, heads, device)
         self.positionwise_feedforward = torch.nn.Sequential(
             torch.nn.Linear(hidden_size, pf_size),
             torch.nn.ReLU(),
