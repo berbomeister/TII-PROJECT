@@ -41,7 +41,7 @@ class MultiHeadAttentionLayer(torch.nn.Module):
                 
         Q = Q.view(batch_size, -1, self.heads, self.head_size).permute(0, 2, 1, 3)  # [batch size, n heads, query len, head dim]
         K = K.view(batch_size, -1, self.heads, self.head_size).permute(0, 2, 3, 1)  # [batch size, n heads, head dim, key len]  
-        V = V.view(batch_size, -1, self.heads, self.head_size).permute(0, 2, 1, 3)  # [batch size, n heads, value len, head dim]
+        V = V.view(batch_size, -1, self.heads, self.head_size).permute(0, 2, 1, 3)  # [batch size, n heads, value len, head dim] 
                 
         attn_score = torch.matmul(Q, K) / self.scale  # [batch size, n heads, query len, key len]
         
@@ -50,7 +50,6 @@ class MultiHeadAttentionLayer(torch.nn.Module):
         
         attention = torch.nn.functional.softmax(attn_score, dim = 3)  # [batch size, n heads, query len, key len]
 
-        #no attention dropout       
         x = torch.matmul(attention, V)  # [batch size, n heads, query len, head dim]
         
         x = x.permute(0, 2, 1, 3).flatten(2,3)  # [batch size, query len, n heads, head dim] -> [batch size, query len, head dim * n heads]
