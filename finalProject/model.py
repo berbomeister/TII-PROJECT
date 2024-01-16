@@ -134,6 +134,9 @@ class Decoder(torch.nn.Module):
         self.dropout = torch.nn.Dropout(dropout)
         
         
+        
+        
+        
     def forward(self, trg, enc_src, trg_mask, src_mask):
         
         # trg = [batch size, trg len]
